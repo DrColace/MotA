@@ -18,6 +18,9 @@
 		3A5E210D1EB82C3800E3465E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; };
 		3A5E210E1EB82C9300E3465E /* AFNetworking.framework in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; };
 		3A5E210F1EB82C9E00E3465E /* MBProgressHUD.framework in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E21071EB82B9700E3465E /* MBProgressHUD.framework */; };
+		3A8C88AD1EB8BAC1005A2D2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88AC1EB8BAC1005A2D2F /* Foundation.framework */; };
+		3A8C88AF1EB8BAD3005A2D2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88AE1EB8BAD3005A2D2F /* CoreGraphics.framework */; };
+		3A8C88B11EB8BADE005A2D2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88B01EB8BADE005A2D2F /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +118,9 @@
 		3A0333331EB807B500968CE3 /* BCDataCollector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCDataCollector.h; sourceTree = "<group>"; };
 		3A5E20F01EB82B9100E3465E /* MBProgressHUD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MBProgressHUD.xcodeproj; path = ../../3rdParty_Code/MBProgressHUD/MBProgressHUD.xcodeproj; sourceTree = "<group>"; };
 		3A6B4D931EB814BC004D3339 /* AFNetworking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFNetworking.xcodeproj; path = ../../3rdParty_Code/AFNetworking/AFNetworking.xcodeproj; sourceTree = "<group>"; };
+		3A8C88AC1EB8BAC1005A2D2F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3A8C88AE1EB8BAD3005A2D2F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3A8C88B01EB8BADE005A2D2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A8C88B11EB8BADE005A2D2F /* UIKit.framework in Frameworks */,
+				3A8C88AF1EB8BAD3005A2D2F /* CoreGraphics.framework in Frameworks */,
+				3A8C88AD1EB8BAC1005A2D2F /* Foundation.framework in Frameworks */,
 				3A5E210D1EB82C3800E3465E /* AFNetworking.framework in Frameworks */,
 				3A5E210C1EB82C3200E3465E /* MBProgressHUD.framework in Frameworks */,
 			);
@@ -136,6 +145,7 @@
 				3A0332601EB7FA8900968CE3 /* MotA */,
 				3A0332861EB7FB1C00968CE3 /* External Code */,
 				3A03325F1EB7FA8900968CE3 /* Products */,
+				3A8C88AB1EB8BAC1005A2D2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +214,16 @@
 				3A6B4DAA1EB814BC004D3339 /* AFNetworking tvOS Tests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3A8C88AB1EB8BAC1005A2D2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A8C88B01EB8BADE005A2D2F /* UIKit.framework */,
+				3A8C88AE1EB8BAD3005A2D2F /* CoreGraphics.framework */,
+				3A8C88AC1EB8BAC1005A2D2F /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,7 +462,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../3rdParty_Code/AFNetworking/AFNetworking\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -485,7 +505,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../3rdParty_Code/AFNetworking/AFNetworking\"";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -507,7 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colace..MotA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -525,7 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.colace..MotA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

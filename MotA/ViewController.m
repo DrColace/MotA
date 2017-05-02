@@ -12,7 +12,7 @@
 
 NSString * const BC_DATA_CELL = @"ACRONYM";
 
-@interface ViewController (/*private*/) < UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate >
+@interface ViewController (/*private*/) < UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate >
 
 @property (nonatomic, weak) IBOutlet UITextField *acronymField;
 @property (nonatomic, weak) IBOutlet UIPickerView *definitionPickerView;
@@ -164,31 +164,6 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
     return NO;
 }
 
-#pragma mark UITableViewDelegate Methods
-#pragma mark -
-
-#pragma mark UITableViewDataSource Methods
-#pragma mark -
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.retrievedDefinitions count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BC_DATA_CELL forIndexPath:indexPath];
-    
-    if(!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:BC_DATA_CELL];
-    }
-    
-    cell.textLabel.text = [self.retrievedDefinitions objectAtIndex:indexPath.row];
-    
-    return cell;
-}
-
 #pragma mark UIPickerViewDelegate Methods
 #pragma mark -
 
@@ -209,6 +184,5 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
 {
     return [self.retrievedDefinitions count];
 }
-
 
 @end
