@@ -19,3 +19,7 @@ This application relies on the addition of an Apple Transport Security override 
 The app was built with iPhone and iPad in mind.  The code works fine on both but due to some issues with layout constraints iPad deployment and UI rotation are currently disabled.
 
 Though there is quite a bit that could be done to make the UI more interesting, it would take more time to focus on who the target audience would be for this app.  As such, the user interface is quite plain.  The one mild bit of dynacism included is a somewhat subtly color shifting background.
+
+All code was written new for this project - no past projects or online works were referenced in the creation of this simple code sample.
+
+Enjoy!
