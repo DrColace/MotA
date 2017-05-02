@@ -4,10 +4,10 @@
 
 A couple of housekeeping notes on project setup.  This project utilizes both AFNetworking and MBProgressHUD.  The Xcode project references these two projects but this respository does not include any of the source code or complied frameworks produced by those projects. These two projects were cloned from GitHub into a shared coded directory with the following structure:
 
-MotA/
-3rdParty_Code/
-  AFNetworking/
-  MBProgressHUD/
+* MotA/
+* 3rdParty_Code/
+*   AFNetworking/
+*   MBProgressHUD/
 
 To eliminate setup and compilation headaches, it is advised to mirror this directory structure on your computer.  If you already have AFNetworking and MBProgressHUD projects stored elsewhere on your computer, you can open the MotA Xcode project file and fix the file references to these two projects. Note that you must also update the Header File Search Paths for both these directories (in the Build Settings) if your project is not set up as noted above.
 
