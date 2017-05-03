@@ -16,7 +16,7 @@ The base functionality of the application is there in this single pane app - use
 
 This application relies on the addition of an Apple Transport Security override in the plist allowing the use of an insecure connection to the acronym service server.  The server does not support https so using the ATS override was necessary (though discouraged by Apple)
 
-The app was built with iPhone and iPad in mind.  The code works fine on both but due to some issues with layout constraints iPad deployment and UI rotation are currently disabled.
+The app was built with iPhone and iPad in mind.  The code works fine on both device types. Though there were some initial issues with layout constraints which required disabling of iPad deployment and UI rotation, the problems have been resolved to the point where both these options are now functional.  Work continues to improve on the layout and display of the acronym results.
 
 Though there is quite a bit that could be done to make the UI more interesting, it would take more time to focus on who the target audience would be for this app.  As such, the user interface is quite plain.  The one mild bit of dynacism included is a somewhat subtly color shifting background.
 
