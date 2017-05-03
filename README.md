@@ -20,7 +20,7 @@ The app was built with iPhone and iPad in mind.  The code works fine on both dev
 
 Though there is quite a bit that could be done to make the UI more interesting, it would take more time to focus on who the target audience would be for this app.  As such, the user interface is quite plain.  The one mild bit of dynacism included is a somewhat subtly color shifting background - just for fun.
 
-One last note - I often do create most if not all of my UI in code in order to avoid inefficiency associated with context shift during work as well as to keep avoid having control and customization of UI elements distributed between two systems, which can lead to confusion or problems on larger projects.  For single pane or other simple apps, using the visual tools is fine as little time is spent on UI concerns in these cases.
+One last note - I often do create most if not all of my UI in code in order to avoid inefficiency associated with context shift during work as well as to keep avoid having control and customization of UI elements distributed between two systems, which can lead to confusion or problems on larger projects.  For single pane or other simple apps, using the visual tools is fine as little time is spent on UI concerns in these cases.  As such, storyboards were used in this app for layout and creation of the few user controls.
 
 All code was written new for this project - no past projects or online works were referenced in the creation of this simple code sample.
 
