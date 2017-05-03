@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,50 +19,39 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" borderStyle="roundedRect" placeholder="Your Acronym Here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Elj-fn-VNf">
-                                <rect key="frame" x="36" y="105" width="343" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <pickerView opaque="NO" contentMode="scaleToFill" showsSelectionIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYl-0k-jtZ" userLabel="definition Picker View">
-                                <rect key="frame" x="16" y="243" width="382" height="468"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="468" id="fRm-tK-1xV"/>
-                                </constraints>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-Xx-L26">
+                                <rect key="frame" x="0.0" y="233" width="375" height="434"/>
                             </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Acronym Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-eZ-tPJ">
+                                <rect key="frame" x="47" y="159" width="282" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="EGM-co-gIo"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.55506496204056455" green="1" blue="0.54407779900292919" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Elj-fn-VNf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3HO-Ka-eqc"/>
-                            <constraint firstItem="Elj-fn-VNf" firstAttribute="centerX" secondItem="mYl-0k-jtZ" secondAttribute="centerX" id="M5z-cj-gzm"/>
-                            <constraint firstItem="mYl-0k-jtZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="VMs-SU-qhs"/>
-                            <constraint firstItem="Elj-fn-VNf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="16" id="cgg-U7-l7Y"/>
-                            <constraint firstItem="Elj-fn-VNf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="85" id="pJS-Wo-fNg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="mYl-0k-jtZ" secondAttribute="bottom" constant="25" id="xLY-ge-aBf"/>
+                            <constraint firstItem="lQk-Xx-L26" firstAttribute="centerX" secondItem="uPg-eZ-tPJ" secondAttribute="centerX" id="Sjc-zo-WiZ"/>
+                            <constraint firstItem="lQk-Xx-L26" firstAttribute="top" secondItem="uPg-eZ-tPJ" secondAttribute="bottom" constant="44" id="TQ5-4J-yEO"/>
+                            <constraint firstItem="uPg-eZ-tPJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="139" id="eLM-u2-FvV"/>
+                            <constraint firstItem="uPg-eZ-tPJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jpn-BK-i58"/>
+                            <constraint firstItem="uPg-eZ-tPJ" firstAttribute="top" relation="lessThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" priority="980" constant="162" id="svd-Nt-C4c"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Elj-fn-VNf"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="Elj-fn-VNf"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
-                        <outlet property="DefinitionPickerView" destination="mYl-0k-jtZ" id="zQp-a4-jz0"/>
-                        <outlet property="acronymField" destination="Elj-fn-VNf" id="mDo-Qv-Kkv"/>
+                        <outlet property="acronymField" destination="uPg-eZ-tPJ" id="CHX-cW-E56"/>
+                        <outlet property="definitionPickerView" destination="lQk-Xx-L26" id="0Ni-ej-RQ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="126.38680659670166"/>
+            <point key="canvasLocation" x="130.40000000000001" y="125.4872563718141"/>
         </scene>
     </scenes>
 </document>
