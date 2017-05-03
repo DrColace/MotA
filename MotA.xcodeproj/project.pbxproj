@@ -14,13 +14,13 @@
 		3A03326E1EB7FA8900968CE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A03326D1EB7FA8900968CE3 /* Assets.xcassets */; };
 		3A0332711EB7FA8900968CE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A03326F1EB7FA8900968CE3 /* LaunchScreen.storyboard */; };
 		3A0333321EB8072B00968CE3 /* BCDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A0333311EB8072B00968CE3 /* BCDataCollector.m */; };
-		3A5E210C1EB82C3200E3465E /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5E21071EB82B9700E3465E /* MBProgressHUD.framework */; };
-		3A5E210D1EB82C3800E3465E /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; };
-		3A5E210E1EB82C9300E3465E /* AFNetworking.framework in Resources */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; };
-		3A5E210F1EB82C9E00E3465E /* MBProgressHUD.framework in Resources */ = {isa = PBXBuildFile; fileRef = 3A5E21071EB82B9700E3465E /* MBProgressHUD.framework */; };
 		3A8C88AD1EB8BAC1005A2D2F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88AC1EB8BAC1005A2D2F /* Foundation.framework */; };
 		3A8C88AF1EB8BAD3005A2D2F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88AE1EB8BAD3005A2D2F /* CoreGraphics.framework */; };
 		3A8C88B11EB8BADE005A2D2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8C88B01EB8BADE005A2D2F /* UIKit.framework */; };
+		3A8C88C01EB9B65C005A2D2F /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; };
+		3A8C88C11EB9B65C005A2D2F /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6B4D9E1EB814BC004D3339 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A8C88C51EB9B663005A2D2F /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5E21071EB82B9700E3465E /* MBProgressHUD.framework */; };
+		3A8C88C61EB9B663005A2D2F /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A5E21071EB82B9700E3465E /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,20 +37,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1D104D7A1ACA36CC00973364;
 			remoteInfo = "MBProgressHUD Framework";
-		};
-		3A5E21081EB82C2400E3465E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A5E20F01EB82B9100E3465E /* MBProgressHUD.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 1D104D791ACA36CC00973364;
-			remoteInfo = "MBProgressHUD Framework";
-		};
-		3A5E210A1EB82C2A00E3465E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A6B4D931EB814BC004D3339 /* AFNetworking.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 299522381BBF104D00859F49;
-			remoteInfo = "AFNetworking iOS";
 		};
 		3A6B4D9D1EB814BC004D3339 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -101,7 +87,36 @@
 			remoteGlobalIDString = 2987B0AE1BC408A200179A4C;
 			remoteInfo = "AFNetworking tvOS Tests";
 		};
+		3A8C88C21EB9B65C005A2D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A6B4D931EB814BC004D3339 /* AFNetworking.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 299522381BBF104D00859F49;
+			remoteInfo = "AFNetworking iOS";
+		};
+		3A8C88C71EB9B663005A2D2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A5E20F01EB82B9100E3465E /* MBProgressHUD.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 1D104D791ACA36CC00973364;
+			remoteInfo = "MBProgressHUD Framework";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A8C88C41EB9B65C005A2D2F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3A8C88C61EB9B663005A2D2F /* MBProgressHUD.framework in Embed Frameworks */,
+				3A8C88C11EB9B65C005A2D2F /* AFNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3A03325E1EB7FA8900968CE3 /* MotA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotA.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,10 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A8C88B11EB8BADE005A2D2F /* UIKit.framework in Frameworks */,
+				3A8C88C01EB9B65C005A2D2F /* AFNetworking.framework in Frameworks */,
 				3A8C88AF1EB8BAD3005A2D2F /* CoreGraphics.framework in Frameworks */,
+				3A8C88C51EB9B663005A2D2F /* MBProgressHUD.framework in Frameworks */,
 				3A8C88AD1EB8BAC1005A2D2F /* Foundation.framework in Frameworks */,
-				3A5E210D1EB82C3800E3465E /* AFNetworking.framework in Frameworks */,
-				3A5E210C1EB82C3200E3465E /* MBProgressHUD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,12 +251,13 @@
 				3A03325A1EB7FA8900968CE3 /* Sources */,
 				3A03325B1EB7FA8900968CE3 /* Frameworks */,
 				3A03325C1EB7FA8900968CE3 /* Resources */,
+				3A8C88C41EB9B65C005A2D2F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3A5E210B1EB82C2A00E3465E /* PBXTargetDependency */,
-				3A5E21091EB82C2400E3465E /* PBXTargetDependency */,
+				3A8C88C31EB9B65C005A2D2F /* PBXTargetDependency */,
+				3A8C88C81EB9B663005A2D2F /* PBXTargetDependency */,
 			);
 			name = MotA;
 			productName = MotA;
@@ -367,8 +383,6 @@
 				3A0332711EB7FA8900968CE3 /* LaunchScreen.storyboard in Resources */,
 				3A03326E1EB7FA8900968CE3 /* Assets.xcassets in Resources */,
 				3A03326C1EB7FA8900968CE3 /* Main.storyboard in Resources */,
-				3A5E210E1EB82C9300E3465E /* AFNetworking.framework in Resources */,
-				3A5E210F1EB82C9E00E3465E /* MBProgressHUD.framework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,15 +403,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A5E21091EB82C2400E3465E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MBProgressHUD Framework";
-			targetProxy = 3A5E21081EB82C2400E3465E /* PBXContainerItemProxy */;
-		};
-		3A5E210B1EB82C2A00E3465E /* PBXTargetDependency */ = {
+		3A8C88C31EB9B65C005A2D2F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "AFNetworking iOS";
-			targetProxy = 3A5E210A1EB82C2A00E3465E /* PBXContainerItemProxy */;
+			targetProxy = 3A8C88C21EB9B65C005A2D2F /* PBXContainerItemProxy */;
+		};
+		3A8C88C81EB9B663005A2D2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MBProgressHUD Framework";
+			targetProxy = 3A8C88C71EB9B663005A2D2F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
