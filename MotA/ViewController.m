@@ -101,11 +101,14 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
 
 - (void)decrementColor:(CGFloat *)ioColor
 {
-    (*ioColor)--;
-    
-    if(*ioColor < 2)
+    if(ioColor)
     {
-        self.colorAscending = YES;
+        (*ioColor)--;
+        
+        if(*ioColor < 2)
+        {
+            self.colorAscending = YES;
+        }
     }
 }
 
