@@ -64,47 +64,48 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
 {
     if(self.colorAscending)
     {
-        if(self.cycleRed)
+        BOOL    peaked;
+        [self incrementColor:(self.cycleRed ? &_red : &_blue) peaking:&peaked];
+        
+        if(peaked)
         {
-            _red++;
-            
-            if(_red > 141)
-            {
-                self.colorAscending = NO;
-                self.cycleRed = NO;
-            }
-        }
-        else
-        {
-            _blue++;
-            
-            if(_blue > 141)
-            {
-                self.colorAscending = NO;
-                self.cycleRed = YES;
-            }
+            self.cycleRed = !self.cycleRed;
         }
     }
     else
     {
-        if(self.cycleRed)
+        [self decrementColor:(self.cycleRed ? &_red : &_blue)];
+    }
+}
+
+- (void)incrementColor:(CGFloat *)ioColor peaking:(BOOL *)peaking
+{
+    BOOL peaked = NO;
+    
+    if(ioColor)
+    {
+        (*ioColor)++;
+        
+        if(*ioColor > 141)
         {
-            _red--;
-            
-            if(_red < 2)
-            {
-                self.colorAscending = YES;
-            }
+            self.colorAscending = NO;
+            peaked = YES;
         }
-        else
-        {
-            _blue--;
-            
-            if(_blue < 2)
-            {
-                self.colorAscending = YES;
-            }
-        }
+    }
+    
+    if(peaking)
+    {
+        *peaking = peaked;
+    }
+}
+
+- (void)decrementColor:(CGFloat *)ioColor
+{
+    (*ioColor)--;
+    
+    if(*ioColor < 2)
+    {
+        self.colorAscending = YES;
     }
 }
 
