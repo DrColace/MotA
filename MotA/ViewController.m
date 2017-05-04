@@ -64,52 +64,53 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
 {
     if(self.colorAscending)
     {
-        BOOL    peaked;
-        [self incrementColor:(self.cycleRed ? &_red : &_blue) peaking:&peaked];
-        
-        if(peaked)
+        if([self incrementColor:(self.cycleRed ? &_red : &_blue) maxValue:140])
         {
+            self.colorAscending = NO;
             self.cycleRed = !self.cycleRed;
         }
     }
     else
     {
-        [self decrementColor:(self.cycleRed ? &_red : &_blue)];
+        if([self decrementColor:(self.cycleRed ? &_red : &_blue) minValue:2])
+        {
+            self.colorAscending = YES;
+        }
     }
 }
 
-- (void)incrementColor:(CGFloat *)ioColor peaking:(BOOL *)peaking
+- (BOOL)incrementColor:(CGFloat *)ioColor maxValue:(CGFloat)maxValue
 {
-    BOOL peaked = NO;
+    BOOL thresholdReached = NO;
     
     if(ioColor)
     {
         (*ioColor)++;
         
-        if(*ioColor > 141)
+        if(*ioColor > maxValue)
         {
-            self.colorAscending = NO;
-            peaked = YES;
+            thresholdReached = YES;
         }
     }
     
-    if(peaking)
-    {
-        *peaking = peaked;
-    }
+    return thresholdReached;
 }
 
-- (void)decrementColor:(CGFloat *)ioColor
+- (BOOL)decrementColor:(CGFloat *)ioColor minValue:(CGFloat)minValue
 {
+    BOOL thresholdReached = NO;
+    
     if(ioColor)
     {
         (*ioColor)--;
         
-        if(*ioColor < 2)
+        if(*ioColor < minValue)
         {
-            self.colorAscending = YES;
+            thresholdReached = YES;
         }
     }
+    
+    return thresholdReached;
 }
 
 #pragma mark UITextFieldDelegate Methods
