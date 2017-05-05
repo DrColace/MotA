@@ -10,12 +10,16 @@
 #import "BCDataCollector.h"
 #import "MBProgressHUD.h"
 
+#define BC_USE_TABLEVIEW   1
+
 NSString * const BC_DATA_CELL = @"ACRONYM";
 
-@interface ViewController (/*private*/) < UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate >
+@interface ViewController (/*private*/) < UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate >
 
 @property (nonatomic, weak) IBOutlet UITextField *acronymField;
 @property (nonatomic, weak) IBOutlet UIPickerView *definitionPickerView;
+
+@property (nonatomic, weak) UITableView *definitionsView;
 
 
 @property (nonatomic, strong) NSString *lastSearchString;
@@ -35,8 +39,29 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
 {
     [super viewDidLoad];
     
+#if BC_USE_TABLEVIEW
+    CGRect      itemRect = CGRectZero;
+    UITableView *tv;
+    
+    itemRect.origin.y = CGRectGetMaxY(self.acronymField.frame) + 20;
+    itemRect.size.width = CGRectGetWidth(self.view.bounds);
+    itemRect.size.height = CGRectGetHeight(self.view.bounds) - itemRect.origin.y;
+    
+    tv = [[UITableView alloc] initWithFrame:itemRect style:UITableViewStylePlain];
+ 
+    [self.view addSubview:tv];
+    
+    tv.delegate = self;
+    tv.dataSource = self;
+    tv.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    self.definitionsView = tv;
+    
+    self.definitionPickerView.hidden = TRUE;
+#else
     self.definitionPickerView.delegate = self;
     self.definitionPickerView.dataSource = self;
+#endif
     
     self.acronymField.delegate = self;
 
@@ -146,7 +171,12 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
                     self.lastSearchString = updatedSearchString;
                     
 //                    NSLog(@"%@", [definitions description]);
+                    
+#if BC_USE_TABLEVIEW
+                    [self.definitionsView reloadData];
+#else
                     [self.definitionPickerView reloadAllComponents];
+#endif
                 });
 
             } failed:^{
@@ -156,6 +186,12 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
                     
                     self.retrievedDefinitions = nil;
                     self.lastSearchString = nil;
+                    
+#if BC_USE_TABLEVIEW
+                    [self.definitionsView reloadData];
+#else
+                    [self.definitionPickerView reloadAllComponents];
+#endif
                 });
             }];
         }
@@ -167,6 +203,33 @@ NSString * const BC_DATA_CELL = @"ACRONYM";
     [textField resignFirstResponder];
     
     return NO;
+}
+
+#pragma mark UITableViewDelegate Methods
+#pragma mark -
+
+#pragma mark UITableViewDataSource Methods
+#pragma mark -
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.retrievedDefinitions count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BC_DATA_CELL];
+    
+    if(!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:BC_DATA_CELL];
+        
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    }
+    
+    cell.textLabel.text = [self.retrievedDefinitions objectAtIndex:indexPath.row];
+    
+    return cell;
 }
 
 #pragma mark UIPickerViewDelegate Methods
