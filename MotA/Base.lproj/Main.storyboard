@@ -25,7 +25,7 @@
                             <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQk-Xx-L26">
                                 <rect key="frame" x="0.0" y="233" width="375" height="434"/>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Acronym Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-eZ-tPJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Acronym Here" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-eZ-tPJ">
                                 <rect key="frame" x="47" y="159" width="282" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="282" id="EGM-co-gIo"/>
